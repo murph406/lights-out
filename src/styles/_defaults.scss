@@ -1,0 +1,34 @@
+html {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: underline;
+  &.btn {
+    text-decoration: none;
+  }
+}
+
+ul {
+  list-style: disc outside;
+  padding-left: 2em;
+}
+
+ol {
+  list-style: decimal outside;
+  padding-left: 2em;
+  &.letters {
+    list-style-type: upper-alpha;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  td,
+  th {
+    padding: 4px;
+    text-align: center;
+    border: 1px solid black;
+    vertical-align: middle;
+  }
+}

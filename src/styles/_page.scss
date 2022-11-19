@@ -1,0 +1,107 @@
+
+.page{
+  position: relative;
+  color: black;
+  background-color: white;
+  width: 100%;
+
+  &.page--dark{
+    background: black;
+    color: white;
+  }
+
+  h1.gradient{
+   @include textgradient;
+    hyphens: auto;
+    line-height: 1.2;
+    font-size:32px;
+     @include media-breakpoint-up(lg) {
+      font-size:50px;
+    }
+  
+  }
+
+  // When Content is Inset
+  .page__content {
+    // padding: 5vw 20px;
+    padding: 40px 20px;
+    width: 100%;
+    margin:0px auto;
+    max-width:1000px;
+    h2{
+      font-size:28px;
+    }
+  }
+
+  // Footer
+  .page__footer{
+    width:100%;
+    background:blue;
+  }
+
+}
+
+// Centered{
+  .page--titlecenter{
+    text-align:center;
+    .page__content{
+      max-width:500px;
+    }
+  }
+
+// With Title Left
+.page--titleleft{
+  *{
+    // outline:solid 1px red;
+  }
+  .page__content{
+    display:flex;
+    max-width:900px;
+    flex-direction: column;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+  .page__title{
+    width: 100%;
+    padding-right:20px;
+
+    @include media-breakpoint-up(lg) {
+      display:initial;
+      position:absolute;
+      width: calc(50vw - 450px);
+      left: calc(-49vw + 450px);
+      max-width:450px;
+      padding-right:20px;
+      padding-left: 20px;
+    }
+
+    @include media-breakpoint-up(lgr) {
+      width: calc(50vw - 600px);
+      left: calc(-49vw + 600px);
+      max-width:400px;
+    }
+  }
+  .page__main{
+    width:100%;
+    @include media-breakpoint-up(lg) {
+      max-width: 800px;
+    }
+    h1{ 
+      @include media-breakpoint-up(md) {
+        display:none;
+      }
+    }
+  }
+}
+
+// Has Form
+.page__main--hasform{
+  max-width: 400px;
+  margin: 0px auto;
+  text-align: center;
+  color:white;
+  h1{font-weight:bold;}
+  p{font-size:20px;}
+}

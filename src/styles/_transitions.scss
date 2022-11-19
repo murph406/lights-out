@@ -1,0 +1,56 @@
+// Layout transition
+.layout-enter-active {
+  transition: opacity 0.75s ease-in-out 0s;
+}
+
+.layout-leave-active {
+  transition: opacity 0.5s ease-in-out 0s;
+}
+
+.layout-enter,
+.layout-leave-to {
+  opacity: 0.0;
+}
+
+.layout-enter-to {
+  opacity: 1.0;
+}
+
+// Page transition
+.page-enter-active {
+  transition: opacity 0.75s ease-in-out 0s;
+}
+
+.page-leave-active {
+  transition: opacity 0.5s ease-in-out 0s;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0.0;
+}
+
+.page-enter-to {
+  opacity: 1.0;
+}
+
+// FADE
+.vt-fade-enter-active {
+  transition: opacity 0.5s ease 0s;
+}
+
+.vt-fade-leave-active {
+  transition: opacity 0.5s ease 0s;
+}
+
+.vt-fade-enter {
+  opacity: 0.0;
+}
+
+.vt-fade-enter-to {
+  opacity: 1.0;
+}
+
+.vt-fade-leave-to {
+  opacity: 0.0;
+}

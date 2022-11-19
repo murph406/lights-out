@@ -1,0 +1,116 @@
+// strip units from any number. "50px" returns 50.
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// convert px to em, with regard to its context. Most context will be 16px.
+@function px-em($pxFont, $context:16){
+  @return (strip-units($pxFont) / strip-units($context)) + 0em;
+}
+
+// convert px to rem, with regard to its context. Most context will be 16px.
+@function px-rem($pxFont, $context:16){
+  @return (strip-units($pxFont) / strip-units($context)) + 0rem;
+}
+
+// Webkit-style focus
+// ------------------
+@mixin tab-focus($color: $blue-primary, $offset: 0) {
+  outline: auto;
+  outline-width: 0.125rem;
+  outline-offset: $offset;
+  outline-color: $color;
+}
+
+// Center-align a block level element
+// ----------------------------------
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Center-align a relative/absolute element
+// ----------------------------------
+@mixin center-position($width, $position:absolute) {
+  position: $position;
+  left: 50%;
+  width: $width;
+  margin-left: -$width / 2;
+}
+
+// Center-align an absolute elemete
+// ----------------------------------
+@mixin center-absolute($width) {
+  @include center-position($width, absolute);
+}
+
+// Center-align an absolute elemete
+// ----------------------------------
+@mixin center-relative($width) {
+  @include center-position($width, relative);
+}
+
+// Sizing shortcuts
+// -------------------------
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+// @extend this microfix for clearfix
+@mixin microfix() {
+  /**
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    contenteditable attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that are clearfixed.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+  &:before,
+  &:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+  }
+
+  &:after {
+      clear: both;
+  }
+
+  /**
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  & {
+      *zoom: 1;
+  }
+}
+
+@mixin text-gradient($color1: black, $color2: white, $rotate: 0deg) {
+  background: -webkit-linear-gradient($rotate, $color1, $color2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0,0,0,0.0001);
+}
+
+@mixin hocus() {
+  &:focus,
+  &:hover {
+    @content
+  }
+}
+
+
+@mixin textgradient(){
+  color:$orange-dark;
+  background-image: -webkit-linear-gradient(0deg, #fb9426, #fb5d0a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  // outline:solid 1px red;
+  display:inline-block;
+}

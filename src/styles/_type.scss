@@ -1,0 +1,63 @@
+body {
+  line-height: 1.4;
+  overscroll-behavior: none;
+  font-size: 12px;
+  min-width: 320px;
+
+
+  @include media-breakpoint-up(sm) {
+    font-size: 15px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    font-size: 21px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    font-size: 22px;
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $headingFontFamily;
+  line-height: 1.2;
+}
+
+h1, .h1 {
+  font-size: $text-h1;
+}
+h2, .h2 {
+  font-size: $text-h2;
+}
+h3, .h3 {
+  font-size: $text-h3;
+}
+h4, .h4 {
+  font-size: $text-h4;
+}
+h5, .h5 {
+  font-size: $text-h5;
+}
+h6, .h6 {
+  font-size: $text-h6;
+}
+
+p, ul, ol,
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+}
+
+sup {
+  vertical-align: middle;
+  font-size: 0.5em;
+}
+
+a {
+  color: inherit;
+}
