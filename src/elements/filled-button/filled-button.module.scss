@@ -1,0 +1,31 @@
+@import '../../styles/main.scss';
+
+.filledButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary;
+    border: none;
+    min-width: 10rem;
+    height: 2.5rem;
+    border-radius: .2rem;
+    color: $background;
+    transition: background-color .3s $springIn;
+    cursor: pointer;
+
+    p {
+        color: $background;
+        margin-bottom: 0;
+        transition: color .3s $springIn;
+    }
+}
+
+.filledButton:hover {
+    color: $font-primary;
+    background-color: $primary;
+
+    p {
+        color: $font-primary;
+    }
+}

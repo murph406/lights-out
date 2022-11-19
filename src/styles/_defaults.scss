@@ -3,10 +3,9 @@ html {
 }
 
 a {
-  text-decoration: underline;
-  &.btn {
-    text-decoration: none;
-  }
+  text-decoration: none;
+  border-bottom: solid .08rem;
+  line-height: .9;
 }
 
 ul {

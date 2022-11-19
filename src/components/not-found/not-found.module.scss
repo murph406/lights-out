@@ -1,0 +1,31 @@
+@import '../../styles/main.scss';
+
+
+.notFound {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+
+    h1 {
+        font-size: $text-h1;
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 3rem;
+    }
+
+    a {
+        color: $font-secondary
+    }
+
+    @include media-breakpoint-down(sm) {
+        h1 {
+            font-size: 2.2rem;
+        }
+    }
+}

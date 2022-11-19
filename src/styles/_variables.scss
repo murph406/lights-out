@@ -18,9 +18,6 @@ $gray-700: #404040;
 $gray-800: #27272a;
 $gray-900: #18181b;
 $green-primary: #019444;
-$green-dark: #006519;
-$green-extra-dark: #003900;
-$green-light: #4fc671;
 $blue-primary: #0BA6D9;
 $purple-primary: #520DFC;
 $red-primary: #FF0E00;
@@ -28,8 +25,15 @@ $orange-primary: #FC8E0F;
 $yellow-primary: #D9CE0B;
 
 // Custom Colors
-$orange-dark: #fe6100;
-$orange-light: #fb9327;
+$background: rgb(15, 15, 15);
+$surface: rgb(23, 23, 23);
+$primary: rgb(172, 106, 251);
+$secondary: rgb(28, 213, 185);
+
+//Found Colors
+$font-primary: rgb(219, 219, 219);
+$font-secondary: rgb(147, 147, 147);
+
 
 $defaultTextColor: #292929;
 $linkColor: black;
@@ -53,21 +57,8 @@ $font-thin: 100;
 $font-normal: 400;
 $font-bold: 700;
 
-// $baseFontFamily: '14four', sans-serif;
-// $headingFontFamily: '14four', sans-serif;
 $baseFontFamily: 'noto-sans',sans-serif;
 $baseFontFamilyBold: 'noto-sans-bold',sans-serif;
-
-$proximaNovaCond: 'proxima-nova-condensed',
-sans-serif;
-$headingFontFamily: 'HelveticaNeueLTStd',
-sans-serif;
-$gatoradeBlack: 'gatorade-black',
-sans-serif;
-$helveticaNeue: 'HelveticaNeueLTStd',
-sans-serif;
-$kairosSans: 'KairosSans',
-sans-serif;
 
 // DURATIONS
 $durationSlower: 0.75s;
@@ -75,7 +66,6 @@ $durationSlow: 0.5s;
 $durationNormal: 0.25s;
 $durationFast: 0.2s;
 $durationQuick: 0.1s;
-
 $springIn: cubic-bezier(0.52, 0.01, 0.16, 1);
 
 // Z-INDEX
@@ -96,20 +86,3 @@ $grid-breakpoints: (xs: 500px,
   lg: 1366px,
   lgr: 1600px,
   xl: 1920px) !default;
-
-/**
-  Media Breakpoint Example
-
-  @include media-breakpoint-up(sm) {
-    //do something
-  }
-  @include media-breakpoint-down(sm) {
-    //do something
-  }
-  @include media-breakpoint-between(sm, md) {
-    //do something
-  }
-
-  @see ./_breakpoints.scss
-
-**/
