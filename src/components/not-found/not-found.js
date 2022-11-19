@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 import styles from './not-found.module.scss'
 import { FilledButton } from '../../elements'
+import { PATH } from "../../routes/routes";
 
 const NotFound = () => {
     const navigate = useNavigate();
 
     const onGoHome = () => {
-        navigate('/')
+        navigate(PATH.ROOT)
     }
 
     return (

@@ -5,17 +5,26 @@ import {
     Navigate
 } from "react-router-dom";
 
-import { WelcomePage, NotFoundPage } from '../components'
+import { HeroPage, NotFoundPage, GamePage } from '../components'
 
+export const PATH = {
+    ROOT: '/',
+    WELCOME: '/welcome',
+    GAME: '/game'
+}
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <Navigate to="/welcome" replace />,
+        path: PATH.ROOT,
+        element: <Navigate to={PATH.WELCOME} replace />,
     },
     {
-        path: "/welcome",
-        element: <WelcomePage />,
+        path: PATH.WELCOME,
+        element: <HeroPage />,
+    },
+    {
+        path: PATH.GAME,
+        element: <GamePage />,
     },
     {
         path: "*",
