@@ -1,7 +1,41 @@
 @import '../../styles/main.scss';
 
 
-.landing {
+.welcome {
     position: relative;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 3rem;
+
+    .headlineContainer {
+        max-width: 50rem;
+
+        h1 {
+            font-size: 3.8rem;
+            line-height: .95;
+            margin-bottom: 2rem;
+
+            .small {
+                font-size: .45em;
+            }
+
+            .fontGreen {
+                color: $secondary;
+            }
+
+            .fontPurple {
+                color: $primary;
+            }
+        }
+
+        .detailText {
+            color: $font-secondary;
+            margin-bottom: 3rem;
+        }
+    }
+
+
 }

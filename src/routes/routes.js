@@ -11,10 +11,10 @@ import { WelcomePage, NotFoundPage } from '../components'
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Navigate to="/landing" replace />,
+        element: <Navigate to="/welcome" replace />,
     },
     {
-        path: "/landing",
+        path: "/welcome",
         element: <WelcomePage />,
     },
     {

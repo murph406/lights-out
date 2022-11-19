@@ -5,27 +5,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $secondary;
+    background-color: $primary;
     border: none;
     min-width: 10rem;
     height: 2.5rem;
-    border-radius: .2rem;
+    border-radius: .25rem;
     color: $background;
     transition: background-color .3s $springIn;
     cursor: pointer;
 
-    p {
-        color: $background;
+    .buttonFont {
+        color: white;
+        font-weight: bold;
         margin-bottom: 0;
         transition: color .3s $springIn;
     }
 }
 
 .filledButton:hover {
-    color: $font-primary;
-    background-color: $primary;
+    background-color: $secondary;
 
-    p {
+    .buttonFont {
+        font-weight: bold;
         color: $font-primary;
     }
 }

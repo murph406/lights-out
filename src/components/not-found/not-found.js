@@ -16,9 +16,7 @@ const NotFound = () => {
             <h1>Are you lost?</h1>
             <p>Sorry, we can't find that page.</p>
 
-            <FilledButton onClick={onGoHome}>
-                <p>Go Home</p>
-            </FilledButton>
+            <FilledButton onClick={onGoHome} text={'Go Home'} />
         </div>
     )
 }
