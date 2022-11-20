@@ -27,6 +27,7 @@ const Game = () => {
     }, [cells]);
 
     const initGame = () => {
+        setNumOfMoves(0)
         setCells(setCellMatrix())
     }
 
@@ -63,25 +64,25 @@ const Game = () => {
 
     const getAdjacentCells = (position) => {
         let cellPositionMatrix = [position]
-        const top = [position[0], position[1] - 1]
-        const bottom = [position[0], position[1] + 1]
-        const right = [position[0] + 1, position[1]]
-        const left = [position[0] - 1, position[1]]
+        const topCell = [position[0], position[1] - 1]
+        const bottomCell = [position[0], position[1] + 1]
+        const rightCell = [position[0] + 1, position[1]]
+        const leftCell = [position[0] - 1, position[1]]
 
-        if (0 <= top[1] && top[1] <= BOARD_SIZE - 1) {
-            cellPositionMatrix.push(top)
+        if (0 <= topCell[1] && topCell[1] <= BOARD_SIZE - 1) {
+            cellPositionMatrix.push(topCell)
         }
 
-        if (0 <= bottom[1] && bottom[1] <= BOARD_SIZE - 1) {
-            cellPositionMatrix.push(bottom)
+        if (0 <= bottomCell[1] && bottomCell[1] <= BOARD_SIZE - 1) {
+            cellPositionMatrix.push(bottomCell)
         }
 
-        if (0 <= right[0] && right[0] <= BOARD_SIZE - 1) {
-            cellPositionMatrix.push(right)
+        if (0 <= rightCell[0] && rightCell[0] <= BOARD_SIZE - 1) {
+            cellPositionMatrix.push(rightCell)
         }
 
-        if (0 <= left[0] && left[0] <= BOARD_SIZE - 1) {
-            cellPositionMatrix.push(left)
+        if (0 <= leftCell[0] && leftCell[0] <= BOARD_SIZE - 1) {
+            cellPositionMatrix.push(leftCell)
         }
 
         return cellPositionMatrix
@@ -111,13 +112,14 @@ const Game = () => {
 
             {cells !== null
                 ?
-                <div>
-                    <div className={styles.contentContainer}>
+                <div className={styles.gameContainer}>
+                    <div className={styles.gameBoardContainer}>
                         {cells.map((rowArray, rowIndex) => (
                             <div className={styles.row}>
                                 {rowArray.map((cell, columnIndex) => {
                                     const cellId = "cell-" + rowIndex + "-" + columnIndex
                                     return <Cell
+                                        id={cellId}
                                         key={cellId}
                                         active={cell === 1 ? true : false}
                                         onClick={() => onClickCell(cellId)}
