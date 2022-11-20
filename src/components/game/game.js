@@ -10,6 +10,7 @@ const BOARD_SIZE = 5
 
 const Game = () => {
     const [cells, setCells] = useState(null)
+    const [numOfMoves, setNumOfMoves] = useState(0)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -30,12 +31,11 @@ const Game = () => {
     }
 
     const onClickCell = (id) => {
-        let cellPositionMatrix = []
-
         const position = getCellPosition(id)
-        cellPositionMatrix.push(position)
-
+        const cellPositionMatrix = getAdjacentCells(position)
         const newMatrix = getUpdatedCellMatrix(cellPositionMatrix)
+
+        setNumOfMoves(numOfMoves + 1)
         setCells([...newMatrix])
     }
 
@@ -61,15 +61,37 @@ const Game = () => {
         return true
     }
 
-    const getAdjacentCells = () => {
+    const getAdjacentCells = (position) => {
+        let cellPositionMatrix = [position]
+        const top = [position[0], position[1] - 1]
+        const bottom = [position[0], position[1] + 1]
+        const right = [position[0] + 1, position[1]]
+        const left = [position[0] - 1, position[1]]
 
+        if (0 <= top[1] && top[1] <= BOARD_SIZE - 1) {
+            cellPositionMatrix.push(top)
+        }
+
+        if (0 <= bottom[1] && bottom[1] <= BOARD_SIZE - 1) {
+            cellPositionMatrix.push(bottom)
+        }
+
+        if (0 <= right[0] && right[0] <= BOARD_SIZE - 1) {
+            cellPositionMatrix.push(right)
+        }
+
+        if (0 <= left[0] && left[0] <= BOARD_SIZE - 1) {
+            cellPositionMatrix.push(left)
+        }
+
+        return cellPositionMatrix
     }
 
     const getCellPosition = (id) => {
         let position = id.split("cell-")
         position = position[1].split('-')
 
-        return position
+        return [Number(position[0]), Number(position[1])]
     }
 
     const setCellMatrix = () => {
@@ -88,27 +110,31 @@ const Game = () => {
             </div>
 
             {cells !== null
-                ? <div className={styles.contentContainer}>
-                    {cells.map((rowArray, rowIndex) => (
-                        <div className={styles.row}>
-                            {rowArray.map((cell, columnIndex) => {
-                                const cellId = "cell-" + rowIndex + "-" + columnIndex
-                                return <Cell
-                                    key={cellId}
-                                    active={cell === 1 ? true : false}
-                                    onClick={() => onClickCell(cellId)}
-                                />
-                            })}
-                        </div>
-                    )
-                    )}
+                ?
+                <div>
+                    <div className={styles.contentContainer}>
+                        {cells.map((rowArray, rowIndex) => (
+                            <div className={styles.row}>
+                                {rowArray.map((cell, columnIndex) => {
+                                    const cellId = "cell-" + rowIndex + "-" + columnIndex
+                                    return <Cell
+                                        key={cellId}
+                                        active={cell === 1 ? true : false}
+                                        onClick={() => onClickCell(cellId)}
+                                    />
+                                })}
+                            </div>
+                        )
+                        )}
+                    </div>
+                    <p>Total Moves: {numOfMoves}</p>
                 </div>
                 : null
             }
 
             <div className={styles.footerContainer}>
                 <Link to={PATH.ROOT}>Go Home</Link>
-                <FilledButton text={"Start Over"} onClick={initGame} />
+                <FilledButton text={"Restart"} onClick={initGame} />
             </div>
         </div>
     )
