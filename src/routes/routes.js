@@ -5,12 +5,13 @@ import {
     Navigate
 } from "react-router-dom";
 
-import { HeroPage, NotFoundPage, GamePage } from '../components'
+import { HeroPage, NotFoundPage, GamePage, WonPage } from '../components'
 
 export const PATH = {
     ROOT: '/',
     WELCOME: '/welcome',
-    GAME: '/game'
+    GAME: '/play',
+    WON: '/won-game'
 }
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     {
         path: PATH.GAME,
         element: <GamePage />,
+    },
+    {
+        path: PATH.WON,
+        element: <WonPage />,
     },
     {
         path: "*",

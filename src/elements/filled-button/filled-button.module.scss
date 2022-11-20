@@ -8,13 +8,17 @@
     background-color: $primary;
     border: none;
     min-width: 10rem;
-    height: 2.5rem;
     border-radius: .25rem;
     color: $background;
     transition: background-color .3s $springIn;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
     cursor: pointer;
 
     .buttonFont {
+        font-size: 1rem;
         color: white;
         font-weight: bold;
         margin-bottom: 0;
@@ -27,6 +31,6 @@
 
     .buttonFont {
         font-weight: bold;
-        color: $font-primary;
+        color: $background;
     }
 }

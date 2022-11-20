@@ -2,4 +2,79 @@
 
 .game {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 3rem;
+
+
+    .headlineContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+
+        h1 {
+            font-size: 3.8rem;
+            line-height: .95;
+            margin-bottom: 1rem;
+
+            .small {
+                font-size: .45em;
+            }
+
+            .fontGreen {
+                color: $secondary;
+            }
+
+            .fontPurple {
+                color: $primary;
+            }
+        }
+
+        p {
+            color: $font-secondary;
+            margin-bottom: 3rem;
+        }
+    }
+
+    .contentContainer {
+        padding: .5vw;
+        background-color: $surface;
+        margin-bottom: 3rem;
+
+
+        .row {
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    .footerContainer {
+        display: flex;
+        align-items: center;
+
+        a {
+            font-family: $baseFontFamily;
+            color: $font-secondary;
+            font-size: 1rem;
+            margin-right: 3rem;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .headlineContainer {
+            margin-bottom: unset;
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
 }

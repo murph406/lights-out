@@ -1,0 +1,37 @@
+@import '../../styles/main.scss';
+
+
+.cell {
+    height: 4.5vw;
+    width: 4.5vw;
+    margin: .5vw;
+    background-color: $gray-800;
+    transition: background-color .3s $springIn;
+    cursor: pointer;
+
+    @include media-breakpoint-down(sm) {
+        height: 10vw;
+        width: 10vw;
+        margin: 1.5vw;
+    }
+}
+
+.cell:hover {
+    background-color: $gray-200;
+
+    @include media-breakpoint-down(sm) {
+        background-color: $gray-800;
+    }
+}
+
+.active {
+    background-color: $primary;
+}
+
+.active:hover {
+    background-color: $secondary;
+
+    @include media-breakpoint-down(sm) {
+        background-color: $primary;
+    }
+}
