@@ -24,7 +24,7 @@ const HeroPage = () => {
 
                 <p className={styles.detailText}>LightsOut is based on a simple concept. Clicking on a cell toggles that cell and each of its adjacent neighbors. The goal is to turn out all the lights, ideally with the minimum number of clicks.</p>
 
-                <FilledButton text={"Get Started"} onClick={onNavGame} />
+                <FilledButton text={"Let's Play!"} onClick={onNavGame} />
             </div>
         </div>
     )
