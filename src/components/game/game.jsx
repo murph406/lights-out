@@ -6,7 +6,7 @@ import { randomInt } from "../../helpers";
 import { Cell, FilledButton } from "../../elements";
 import { PATH } from "../../routes/routes";
 
-export const BOARD_SIZE = 6
+export const BOARD_SIZE = 5
 
 const GamePage = () => {
     const [cells, setCells] = useState(null)
