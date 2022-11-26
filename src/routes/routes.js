@@ -4,8 +4,7 @@ import {
     RouterProvider,
     Navigate
 } from "react-router-dom";
-
-import { HeroPage, NotFoundPage, GamePage, WonPage } from '../components'
+import { HeroPage, NotFoundPage, WonPage, GamePage } from '../components'
 
 export const PATH = {
     ROOT: '/',

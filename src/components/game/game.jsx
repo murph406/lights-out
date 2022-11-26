@@ -6,16 +6,16 @@ import { randomInt } from "../../helpers";
 import { Cell, FilledButton } from "../../elements";
 import { PATH } from "../../routes/routes";
 
-const BOARD_SIZE = 5
+export const BOARD_SIZE = 6
 
-const Game = () => {
+const GamePage = () => {
     const [cells, setCells] = useState(null)
     const [numOfMoves, setNumOfMoves] = useState(0)
     const navigate = useNavigate()
 
     useEffect(() => {
         initGame()
-        return () => null
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const Game = () => {
             navigate(PATH.WON)
         }
 
-        return () => null
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cells]);
 
     const initGame = () => {
@@ -36,7 +36,7 @@ const Game = () => {
         const cellPositionMatrix = getAdjacentCells(position)
         const newMatrix = getUpdatedCellMatrix(cellPositionMatrix)
 
-        setNumOfMoves(numOfMoves + 1)
+        setNumOfMoves((prevState) => prevState + 1)
         setCells([...newMatrix])
     }
 
@@ -110,12 +110,12 @@ const Game = () => {
                 <p>Turn out the lights!</p>
             </div>
 
-            {cells !== null
+            {cells != undefined
                 ?
                 <div className={styles.gameContainer}>
-                    <div className={styles.gameBoardContainer}>
+                    <div className={styles.gameBoardContainer} aria-label="Game Board" key="game-board-test-id" data-testid="game-board-test-id">
                         {cells.map((rowArray, rowIndex) => (
-                            <div className={styles.row}>
+                            <div className={styles.row} key={"game-row-" + rowIndex.toString()}>
                                 {rowArray.map((cell, columnIndex) => {
                                     const cellId = "cell-" + rowIndex + "-" + columnIndex
                                     return <Cell
@@ -129,7 +129,10 @@ const Game = () => {
                         )
                         )}
                     </div>
-                    <p>Total Moves: {numOfMoves}</p>
+                    <p>
+                        <span>Total Moves: </span>
+                        <span data-testid="counter">{numOfMoves}</span>
+                    </p>
                 </div>
                 : null
             }
@@ -142,5 +145,5 @@ const Game = () => {
     )
 }
 
-export default Game;
+export default GamePage;
 

@@ -5,7 +5,7 @@ import styles from './not-found.module.scss'
 import { FilledButton } from '../../elements'
 import { PATH } from "../../routes/routes";
 
-const NotFound = () => {
+const NotFoundPage = () => {
     const navigate = useNavigate();
 
     const onGoHome = () => {
@@ -22,4 +22,4 @@ const NotFound = () => {
     )
 }
 
-export default NotFound
+export default NotFoundPage
