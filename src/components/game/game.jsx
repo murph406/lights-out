@@ -67,7 +67,7 @@ const GamePage = () => {
         const topCell = [position[0], position[1] - 1]
         const bottomCell = [position[0], position[1] + 1]
         const rightCell = [position[0] + 1, position[1]]
-        const leftCell = [position[0] - 1, position[1]]
+        const leftCell = [position[0] - 4, position[1]]
 
         if (0 <= topCell[1] && topCell[1] <= BOARD_SIZE - 1) {
             cellPositionMatrix.push(topCell)
@@ -110,7 +110,7 @@ const GamePage = () => {
                 <p>Turn out the lights!</p>
             </div>
 
-            {cells != undefined
+            {cells !== null
                 ?
                 <div className={styles.gameContainer}>
                     <div className={styles.gameBoardContainer} aria-label="Game Board" key="game-board-test-id" data-testid="game-board-test-id">
@@ -121,7 +121,7 @@ const GamePage = () => {
                                     return <Cell
                                         id={cellId}
                                         key={cellId}
-                                        active={cell === 1 ? true : false}
+                                        active={cell}
                                         onClick={() => onClickCell(cellId)}
                                     />
                                 })}
