@@ -67,7 +67,7 @@ const GamePage = () => {
         const topCell = [position[0], position[1] - 1]
         const bottomCell = [position[0], position[1] + 1]
         const rightCell = [position[0] + 1, position[1]]
-        const leftCell = [position[0] - 4, position[1]]
+        const leftCell = [position[0] - 1, position[1]]
 
         if (0 <= topCell[1] && topCell[1] <= BOARD_SIZE - 1) {
             cellPositionMatrix.push(topCell)
