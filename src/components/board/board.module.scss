@@ -1,0 +1,23 @@
+@import '../../styles/main.scss';
+
+.board {
+    margin-bottom: 3rem;
+
+    p {
+        color: $font-secondary;
+        margin-top: .5rem;
+        margin-left: 1rem;
+        font-size: 1rem;
+    }
+
+    .gameBoardContainer {
+        padding: .5vw;
+        background-color: $surface;
+
+
+        .row {
+            display: flex;
+            width: 100%;
+        }
+    }
+}

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from './not-found.module.scss'
 import { FilledButton } from '../../components'
-import { PATH } from "../../routes/routes";
+import { PATH } from "../routes";
 
 const NotFoundPage = () => {
     const navigate = useNavigate();

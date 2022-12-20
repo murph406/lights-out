@@ -4,7 +4,11 @@ import {
     RouterProvider,
     Navigate
 } from "react-router-dom";
-import { GamePage, HeroPage, NotFoundPage, WonPage } from '../pages'
+
+import GamePage from "./game";
+import HeroPage from "./hero";
+import NotFoundPage from "./not-found";
+import WonPage from "./won";
 
 export const PATH = Object.freeze({
     ROOT: '/',

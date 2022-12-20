@@ -1,13 +1,12 @@
 import React from "react";
-import { useButton } from "./button";
-import styles from './filled-button.module.scss'
+import { useButton } from "../../hooks";
+import styles from './button-filled.module.scss'
 
 export const FilledButton = ({ text, onClick }) => {
-    const { models, operations } = useButton()
+    const { operations } = useButton()
 
     const onClickExtension = () => {
         operations.increment()
-
         onClick()
     }
 

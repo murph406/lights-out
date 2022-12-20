@@ -1,7 +1,6 @@
 import { renderHook, act } from '@testing-library/react';
 
-import { useButton } from './button';
-
+import { useButton } from './index';
 
 test('use button', () => {
     const { result } = renderHook(() => useButton())
@@ -13,9 +12,6 @@ test('use button', () => {
 test('button should increment', () => {
     const { result } = renderHook(() => useButton())
 
-    act(() => {
-        result.current.operations.increment()
-    })
-
+    act(() => result.current.operations.increment())
     expect(result.current.models.clickCount).toBe(1)
 })
