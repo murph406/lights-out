@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FilledButton } from "../../elements";
+
+import { FilledButton } from "../../components";
 import { PATH } from "../../routes/routes";
 
 import styles from './hero.module.scss'

@@ -4,14 +4,14 @@ import {
     RouterProvider,
     Navigate
 } from "react-router-dom";
-import { HeroPage, NotFoundPage, WonPage, GamePage } from '../components'
+import { GamePage, HeroPage, NotFoundPage, WonPage } from '../pages'
 
-export const PATH = {
+export const PATH = Object.freeze({
     ROOT: '/',
     WELCOME: '/welcome',
     GAME: '/play',
     WON: '/won-game'
-}
+})
 
 const router = createBrowserRouter([
     {

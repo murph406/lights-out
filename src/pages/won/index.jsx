@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { Link, useNavigate } from "react-router-dom";
 
 import styles from './won.module.scss'
-import { FilledButton } from '../../elements'
+import { FilledButton } from '../../components'
 import { PATH } from "../../routes/routes";
 
 const Win = () => {
@@ -25,8 +25,6 @@ const Win = () => {
                 </h1>
                 <p>Nice job!</p>
             </div>
-
-
 
             <div className={styles.buttonContainer}>
                 <Link to={PATH.ROOT}>Go Home</Link>

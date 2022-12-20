@@ -1,4 +1,4 @@
-export * from './hero'
-export * from './not-found'
-export * from './game'
-export * from './won'
+// export * from './board'
+export * from './cell'
+export * from './buttons'
+

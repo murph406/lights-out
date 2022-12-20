@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import styles from './game.module.scss'
 import { randomInt } from "../../helpers";
-import { Cell, FilledButton } from "../../elements";
+import { Cell, FilledButton } from '../../components'
 import { PATH } from "../../routes/routes";
 
 export const BOARD_SIZE = 5
