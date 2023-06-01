@@ -6,7 +6,13 @@ import styles from './cell.module.scss'
 
 
 export const Cell = ({ active, onClick, id }) => {
-    return <button data-testid={id} className={cx(styles.cell, { [styles.active]: active === 1 })} onClick={onClick} aria-label={"Toggle " + id} >{active}</button>
+    return (
+        <button
+            data-testid={id}
+            className={cx(styles.cell, { [styles.active]: active === 1 })}
+            onClick={onClick} aria-label={"Toggle " + id}>
+            {active}
+        </button>)
 }
 
 
