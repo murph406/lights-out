@@ -9,7 +9,7 @@ import {
     HeroPage,
     NotFoundPage,
     WonPage
-} from '../pages'
+} from '../views'
 
 export const ROUTES = Object.freeze({
     ROOT: '/',

@@ -1,6 +1,7 @@
 import { renderHook, act } from '@testing-library/react';
 import { useBoard } from './index';
 
+// const console = require('console');
 describe('Init game', () => {
     const { result } = renderHook(() => useBoard())
 
@@ -14,18 +15,17 @@ describe('Init game', () => {
         expect(result).toBeGreaterThanOrEqual(0)
         expect(result).toBeLessThanOrEqual(1)
     })
+
 })
 
 describe('Click Cell', () => {
     const { result } = renderHook(() => useBoard())
 
-    act(() => result.current.operations.onClickCell())
+    act(() => result.current.operations.initGame())
+    act(() => result.current.operations.onClickCell([0, 0]))
 
     test('increment number of moves', () => {
         expect(result.current.models.numOfMoves).toBe(1)
     })
 })
 
-// Create function that gets adjacent cell positions 
-// Create function getCell returns [x, y, currentValue]
-// Create function updateCell returns [x, y, updatedValue]

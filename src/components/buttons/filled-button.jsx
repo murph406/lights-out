@@ -1,5 +1,5 @@
 import React from "react";
-import { useButton } from "../../hooks";
+import { useButton } from "../../componentHooks";
 import styles from './filled-button.module.scss'
 
  const FilledButton = ({ text, onClick }) => {
