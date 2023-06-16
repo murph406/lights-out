@@ -6,7 +6,7 @@ import styles from './won.module.scss'
 import { FilledButton } from '../../components'
 import { ROUTES } from "../../routes/routes";
 
-const Win = () => {
+const WonPage = () => {
     const navigate = useNavigate();
 
     const onPlayAgain = () => {
@@ -34,4 +34,4 @@ const Win = () => {
     )
 }
 
-export default Win
+export default WonPage

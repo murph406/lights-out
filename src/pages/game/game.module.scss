@@ -8,13 +8,13 @@
     align-items: center;
     min-height: 100vh;
     padding: 3rem;
+    background-color: $background;
 
 
     .headlineContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        // margin-bottom: 3rem;
 
         h1 {
             font-size: 3.8rem;

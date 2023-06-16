@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 
 import styles from './cell.module.scss'
 
-const Cell = ({ active, onClick, id }) => {
+const Cell = ({ active, onClick }) => {
     return (
         <button
-            data-testid={id}
             className={cx(styles.cell, { [styles.active]: active === 1 })}
-            onClick={onClick} aria-label={"Toggle " + id}>
+            onClick={onClick}>
             {active}
         </button>)
 }

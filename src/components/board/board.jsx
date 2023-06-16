@@ -16,15 +16,12 @@ import styles from './board.module.scss'
             {models.cells !== null
                 ?
                 <div className={styles.board}>
-                    <div className={styles.gameBoardContainer} aria-label="Game Board" key="game-board-test-id" >
+                    <div className={styles.gameBoardContainer} aria-label="Game Board">
                         {models.cells.map((rowArray, rowIndex) => (
-                            <div className={styles.row} key={"game-row-" + rowIndex.toString()}>
+                            <div className={styles.row} key={`game-row-${rowIndex}`}>
                                 {rowArray.map((cell, columnIndex) => {
-                                    const cellId = `cell-${rowIndex}-${columnIndex}`
-
                                     return <Cell
-                                        id={cellId}
-                                        key={cellId}
+                                        key={`cell-${rowIndex}-${columnIndex}`}
                                         active={cell}
                                         onClick={() => operations.onClickCell([rowIndex, columnIndex])}
                                     />
