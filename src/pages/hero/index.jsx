@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { FilledButton } from "../../components";
-import { PATH } from "../../routes/routes";
+import { ROUTES } from "../../routes/routes";
 
 import styles from './hero.module.scss'
 
@@ -10,7 +10,7 @@ const HeroPage = () => {
     const navigate = useNavigate()
 
     const onNavGame = () => {
-        navigate(PATH.GAME)
+        navigate(ROUTES.GAME)
     }
 
     return (

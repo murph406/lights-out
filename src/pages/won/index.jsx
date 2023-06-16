@@ -4,13 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 
 import styles from './won.module.scss'
 import { FilledButton } from '../../components'
-import { PATH } from "../../routes/routes";
+import { ROUTES } from "../../routes/routes";
 
 const Win = () => {
     const navigate = useNavigate();
 
     const onPlayAgain = () => {
-        navigate(PATH.GAME)
+        navigate(ROUTES.GAME)
     }
 
     return (
@@ -27,7 +27,7 @@ const Win = () => {
             </div>
 
             <div className={styles.buttonContainer}>
-                <Link to={PATH.ROOT}>Go Home</Link>
+                <Link to={ROUTES.ROOT}>Go Home</Link>
                 <FilledButton onClick={onPlayAgain} text={'Play Again'} />
             </div>
         </div>

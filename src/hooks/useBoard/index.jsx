@@ -1,11 +1,14 @@
-import React, { useCallback, useState } from 'react'
-import { randomInt } from '../../helpers'
+import { useState } from 'react'
 
 export const BOARD_SIZE = 5
 
 export const useBoard = (actions) => {
     const [cells, setCells] = useState(null)
     const [numOfMoves, setNumOfMoves] = useState(0)
+
+    function getRandomInt(min, max) {
+        return Math.round(Math.random() * (max - min) + min)
+    }
 
     const onClickCell = (cellPosition) => {
         console.log("CELL POSITION::", cellPosition)
@@ -24,7 +27,7 @@ export const useBoard = (actions) => {
         setCells(initBoardMatrix())
     }
 
-    const initBoardMatrix = () => Array.from({ length: BOARD_SIZE }, () => Array.from({ length: BOARD_SIZE }, () => randomInt(0, 1)))
+    const initBoardMatrix = () => Array.from({ length: BOARD_SIZE }, () => Array.from({ length: BOARD_SIZE }, () => getRandomInt(0, 1)))
 
     return {
         models: {

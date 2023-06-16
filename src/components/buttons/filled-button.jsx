@@ -1,8 +1,8 @@
 import React from "react";
 import { useButton } from "../../hooks";
-import styles from './button-filled.module.scss'
+import styles from './filled-button.module.scss'
 
-export const FilledButton = ({ text, onClick }) => {
+ const FilledButton = ({ text, onClick }) => {
     const { operations } = useButton()
 
     const onClickExtension = () => {
@@ -16,3 +16,5 @@ export const FilledButton = ({ text, onClick }) => {
         </button>
     )
 }
+
+export default FilledButton

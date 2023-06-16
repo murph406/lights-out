@@ -1,3 +1,2 @@
 export * from './board'
-export * from './cell/index'
-export * from './button'
+export * from './buttons'

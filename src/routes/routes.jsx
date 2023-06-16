@@ -2,36 +2,32 @@ import React from "react"
 import {
     createBrowserRouter,
     RouterProvider,
-    Navigate
 } from "react-router-dom";
 
-import GamePage from "./game";
-import HeroPage from "./hero";
-import NotFoundPage from "./not-found";
-import WonPage from "./won";
+import {
+    GamePage,
+    HeroPage,
+    NotFoundPage,
+    WonPage
+} from '../pages'
 
-export const PATH = Object.freeze({
+export const ROUTES = Object.freeze({
     ROOT: '/',
-    WELCOME: '/welcome',
     GAME: '/play',
     WON: '/won-game'
 })
 
 const router = createBrowserRouter([
     {
-        path: PATH.ROOT,
-        element: <Navigate to={PATH.WELCOME} replace />,
-    },
-    {
-        path: PATH.WELCOME,
+        path: ROUTES.ROOT,
         element: <HeroPage />,
     },
     {
-        path: PATH.GAME,
+        path: ROUTES.GAME,
         element: <GamePage />,
     },
     {
-        path: PATH.WON,
+        path: ROUTES.WON,
         element: <WonPage />,
     },
     {
@@ -40,6 +36,4 @@ const router = createBrowserRouter([
     },
 ]);
 
-const Routes = () => <RouterProvider router={router} />
-
-export default Routes
+export const Routes = () => <RouterProvider router={router} />

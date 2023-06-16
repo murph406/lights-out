@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './cell.module.scss'
 
-
-export const Cell = ({ active, onClick, id }) => {
+const Cell = ({ active, onClick, id }) => {
     return (
         <button
             data-testid={id}
@@ -15,7 +14,7 @@ export const Cell = ({ active, onClick, id }) => {
         </button>)
 }
 
-
+export default Cell
 
 Cell.propTypes = {
     id: PropTypes.string,

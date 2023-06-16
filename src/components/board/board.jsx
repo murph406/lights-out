@@ -1,15 +1,53 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 
-import styles from './game.module.scss'
-// import { randomInt } from "../../helpers";
-import { FilledButton } from '../../components'
-import { PATH } from "../routes";
-import { Board } from "../../components";
+import { useBoard } from "../../hooks";
+import Cell from "./cell";
+import styles from './board.module.scss'
 
-export const BOARD_SIZE = 5
+ const Board = () => {
+    const { models, operations } = useBoard()
 
-const GamePage = () => {
+    useEffect(() => {
+        operations.initGame()
+    }, [])
+
+    return (
+        <div>
+            {models.cells !== null
+                ?
+                <div className={styles.board}>
+                    <div className={styles.gameBoardContainer} aria-label="Game Board" key="game-board-test-id" >
+                        {models.cells.map((rowArray, rowIndex) => (
+                            <div className={styles.row} key={"game-row-" + rowIndex.toString()}>
+                                {rowArray.map((cell, columnIndex) => {
+                                    const cellId = `cell-${rowIndex}-${columnIndex}`
+
+                                    return <Cell
+                                        id={cellId}
+                                        key={cellId}
+                                        active={cell}
+                                        onClick={() => operations.onClickCell([rowIndex, columnIndex])}
+                                    />
+                                })}
+                            </div>
+                        )
+                        )}
+                    </div>
+                    <p>
+                        <span>Total Moves: </span>
+                        <span>{models.numOfMoves}</span>
+                    </p>
+                </div>
+                : null
+            }
+        </div>
+    )
+}
+
+export default Board
+
+
+
     // const [cells, setCells] = useState(null)
     // const [numOfMoves, setNumOfMoves] = useState(0)
     // const navigate = useNavigate()
@@ -20,7 +58,7 @@ const GamePage = () => {
 
     // useEffect(() => {
     //     if (hasWon()) {
-    //         navigate(PATH.WON)
+    //         navigate(ROUTES.WON)
     //     }
 
     // }, [cells]);
@@ -97,54 +135,4 @@ const GamePage = () => {
     // const setCellMatrix = () => {
     //     return Array.from({ length: BOARD_SIZE }, () => Array.from({ length: BOARD_SIZE }, () => randomInt(0, 1)))
     // }
-
-    return (
-        <div className={styles.game}>
-            <div className={styles.headlineContainer}>
-                <h1>
-                    <span className={styles.fontPurple}>Lights</span>
-                    <span className={styles.fontGreen}>Out</span>
-                </h1>
-
-                <p>Turn out the lights!</p>
-            </div>
-            {/* 
-            {cells !== null
-                ?
-                <div className={styles.gameContainer}>
-                    <div className={styles.gameBoardContainer} aria-label="Game Board" key="game-board-test-id" data-testid="game-board-test-id">
-                        {cells.map((rowArray, rowIndex) => (
-                            <div className={styles.row} key={"game-row-" + rowIndex.toString()}>
-                                {rowArray.map((cell, columnIndex) => {
-                                    const cellId = "cell-" + rowIndex + "-" + columnIndex
-                                    return <Cell
-                                        id={cellId}
-                                        key={cellId}
-                                        active={cell}
-                                        onClick={() => onClickCell(cellId)}
-                                    />
-                                })}
-                            </div>
-                        )
-                        )}
-                    </div>
-                    <p>
-                        <span>Total Moves: </span>
-                        <span data-testid="counter">{numOfMoves}</span>
-                    </p>
-                </div>
-                : null
-            } */}
-
-            <Board />
-
-            <div className={styles.footerContainer}>
-                <Link to={PATH.ROOT}>Go Home</Link>
-                <FilledButton text={"Restart"} />
-            </div>
-        </div>
-    )
-}
-
-export default GamePage;
 
