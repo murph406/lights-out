@@ -17,7 +17,7 @@ export const ROUTES = Object.freeze({
     WON: '/won-game'
 })
 
-const router = createBrowserRouter([
+const pages = [
     {
         path: ROUTES.ROOT,
         element: <HeroPage />,
@@ -34,6 +34,12 @@ const router = createBrowserRouter([
         path: "*",
         element: <NotFoundPage />,
     },
-]);
+]
+
+const routerConfig = {
+    basename: process.env.PUBLIC_URL
+}
+
+const router = createBrowserRouter(pages, routerConfig);
 
 export const Routes = () => <RouterProvider router={router} />
